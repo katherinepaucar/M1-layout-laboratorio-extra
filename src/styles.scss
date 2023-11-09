@@ -1,0 +1,50 @@
+$color-background: #f3dfc1;
+$color-header: #246a73;
+$color-footer: #368f8b;
+$color-menu: #160f29;
+$color-light: #160f29;
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.page-container{
+   display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas: 
+    "menu contenido"
+}
+header{
+    background-color: $color-header;
+    .toolbar{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .page-title{
+        font-size: 2rem;
+        padding: 2px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+main{
+    background-color: $color-background;
+    grid-area: contenido;
+
+
+    
+}
+nav{
+    background-color: $color-menu;
+    grid-area: menu;
+    color:white
+}
+footer{
+    background-color: $color-footer;
+}

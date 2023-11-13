@@ -1,8 +1,4 @@
-$color-background: #ecd8bc;
-$color-header: #34848f;
-$color-footer: #368f8b;
-$color-menu: #3a2f59;
-$color-light: #160f29;
+@use './colors.scss' as c;
 *{
     margin: 0;
     padding: 0;
@@ -22,7 +18,7 @@ body{
 }
 
 header{
-    background-color: $color-header;
+    background-color: c.$color-header;
     grid-area: cabecera;
     
     .toolbar{
@@ -45,9 +41,13 @@ header{
  }
 
 nav{
-    background-color: $color-menu;
+    background-color: c.$color-menu;
     grid-area: menu;
     color:white;
+    .menu-container{
+        position: sticky;
+        top: 0;
+    }
 
     .menu-container ul li{
         padding-left: 6px;
@@ -56,12 +56,12 @@ nav{
         flex-direction: column;
         justify-content: center;
         border: 1px solid black;
-        background-color: #f3dfc1;
+        background-color: c.$color-light;
         color: black
 
     }
     .menu-container ul li:hover{
-        background-color: #246a73;
+        background-color: c.$color-hover;
         color: white;
         cursor: pointer;
 
@@ -77,8 +77,9 @@ nav{
 
 }
 main{
-    background-color: $color-background;
+    background-color: c.$color-background;
     grid-area: contenido;
+    padding: 15px;
     
     .list{
         display: flex;
@@ -87,15 +88,9 @@ main{
         flex-wrap: wrap;
         gap: 10px;
         justify-content: space-around;
-       /* display: grid;
-        grid-template-columns: repeat(4, minmax(350px, 1fr));
-        grid-auto-rows: 200px;
-        grid-gap: 10px;
-        margin-top: 22px;
-        place-items: center;*/
         
         .card{
-            width: 320px;
+            width: 300px;
             height: 200px;
             display: flex;
             flex-direction: column;
@@ -119,7 +114,7 @@ main{
 }
 footer{
     grid-area: pie;
-    background-color: $color-footer;
+    background-color: c.$color-footer;
     font-size: 1rem;
     display: flex;
     align-items: center;

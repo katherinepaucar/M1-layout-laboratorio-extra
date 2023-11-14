@@ -68,14 +68,14 @@ nav{
             border: 1px solid black;
             background-color: c.$color-light;
             color: black;
-
-            li:hover{
-                background-color: c.$color-hover;
-                color: white;
-                cursor: pointer;
-        
-            }
     
+        }
+        li:hover{
+            background-color: c.$color-hover;
+            color: white;
+            cursor: pointer;
+        
+            
         }
     }
 
@@ -83,6 +83,7 @@ nav{
 main{
     background-color: c.$color-background;
     grid-area: contenido;
+    width: 100%;
     padding: 15px;
     
     .list{
@@ -90,8 +91,10 @@ main{
         align-items: center;
         overflow: auto;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 5px;
         justify-content: space-around;
+        align-items: start;
+        height: 100%;
         
         .card{
             width: 300px;
@@ -103,12 +106,16 @@ main{
             background-color: white;
             border: 1px solid black;
             border-radius: 4px;
+            transition: transform .2s;
             img{
                 border-radius: 50%;
             }
             .member-name{
                 text-align: center;
             }         
+        }
+        .card:hover{
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.9);
         }
     }
 

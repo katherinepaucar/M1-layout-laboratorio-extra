@@ -1,4 +1,6 @@
 @use './colors.scss' as c;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@100;200&family=Space+Mono&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 
 }
 body{
+    font-family: 'Montserrat', sans-serif;
     height: 100vh !important;
     display: grid;
     grid-template-columns: 1fr;
@@ -28,6 +31,7 @@ header{
     }
     .page-title{
         font-size: 2rem;
+        color: c.$text-white;
     }
 
 }
@@ -43,7 +47,7 @@ header{
 nav{
     background-color: c.$color-menu;
     grid-area: menu;
-    color:white;
+    color: c.$text-white;
     .menu-container{
         position: sticky;
         top: 0;
@@ -118,4 +122,44 @@ footer{
     font-size: 1rem;
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    header .toolbar {
+      display: none;
+    }
+    .page-container{
+        grid-area: principal;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+        "menu" 
+        "contenido";
+   
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        .menu-title{
+            display: none;
+        }
+        .menu-container {
+        text-align: center;
+            ul {
+                width: 100%;
+                padding: 5px;
+                background-color: c.$color-menu;
+                li{
+                    display: inline-flex;
+                    gap: 5px;
+                    width: 90px;
+            
+            
+                }
+            }
+        }
+    }
+
+
 }

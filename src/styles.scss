@@ -12,7 +12,7 @@ body{
     height: 100vh !important;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px auto 50px;
+    grid-template-rows: 80px auto 50px;
     grid-template-areas: 
     "cabecera"
     "principal"
@@ -23,15 +23,25 @@ body{
 header{
     background-color: c.$color-header;
     grid-area: cabecera;
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 50px;
+    grid-template-areas: 
+    "buscador"
+    "titulo";
     .toolbar{
+        grid-area: buscador;
+        padding: 4px;
         background-color: #c2ebe9;
         display: flex;
         justify-content: space-between;
     }
     .page-title{
+        grid-area: titulo;
         font-size: 2rem;
         color: c.$text-white;
+        display: flex;
+        align-items: center;
     }
 
 }
@@ -89,9 +99,10 @@ main{
     .list{
         display: flex;
         align-items: center;
+        align-content: start;
         overflow: auto;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 10px;
         justify-content: space-around;
         align-items: start;
         height: 100%;
@@ -134,6 +145,20 @@ footer{
 }
 
 @media screen and (max-width: 768px) {
+    header{
+        grid-area: cabecera;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "titulo";
+        .page-title{
+            font-size: 1rem;
+            padding-left: 14px;
+        }
+
+    }
+    
     header .toolbar {
       display: none;
     }
@@ -150,19 +175,20 @@ footer{
     nav {
         position: sticky;
         top: 0;
-        .menu-title{
-            display: none;
-        }
+
         .menu-container {
         text-align: center;
+            .menu-title{
+                display: none;
+            }
             ul {
                 width: 100%;
                 padding: 5px;
                 background-color: c.$color-menu;
                 li{
                     display: inline-flex;
-                    gap: 5px;
-                    width: 90px;
+                    align-items: center;
+                    width: 20%;
             
             
                 }

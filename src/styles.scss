@@ -32,13 +32,14 @@ header{
     .toolbar{
         grid-area: buscador;
         padding: 4px;
-        background-color: #c2ebe9;
+        background-color: c.$color-light-secondary;
         display: flex;
         justify-content: space-between;
     }
     .page-title{
         grid-area: titulo;
         font-size: 2rem;
+        padding-left: 4px;
         color: c.$text-white;
         display: flex;
         align-items: center;
@@ -135,8 +136,7 @@ main{
 }
 footer{
     grid-area: pie;
-    background-color: c.$color-footer;
-    color:c.$text-white;
+    background-color: c.$color-light-secondary;
     font-size: 1rem;
     display: flex;
     align-items: center;

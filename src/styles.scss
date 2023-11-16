@@ -142,10 +142,10 @@ footer{
     align-items: center;
     padding-left: 6px;
 }
+/*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {
     header{
-        grid-area: cabecera;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -162,7 +162,6 @@ footer{
       display: none;
     }
     .page-container{
-        grid-area: principal;
         display: grid;
         grid-template-columns: auto;
         grid-template-areas:
